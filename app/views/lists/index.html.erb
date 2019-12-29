@@ -8,29 +8,29 @@
         <td class="striker"><%= link_to list.description, edit_list_path(list) %><% list.description %></td>
         <td>
             <%= form_for(list) do |form| %>
-            <%= form.text_field :description, type: 'hidden' %>
+        <center>    <%= form.text_field :description, type: 'hidden' %>
             <%= form.check_box :completed,:checked => false, :style => 'visibility: hidden' %>
-            <%= form.submit 'd  o  n  e', class:'btn btn-outline-success btn-sm' %>
+            <%= form.submit 'done', class:'btn btn-success btn-sm' %></center>
             <% end %>
             </td>
           <td>  <% link_to 'Show', list %>
                 <% link_to 'Edit', edit_list_path(list) %>
-             <center><%= link_to 'Delete', list, class: 'btn btn-outline-danger btn-sm', method: :delete, data: { confirm: 'Are you sure?' } %></center>
+             <center><%= link_to 'Delete', list, class: 'btn btn-light btn-sm', method: :delete, data: { confirm: 'Are you sure?' } %></center>
         </td>
       </tr>
       <% else %>
-      <tr>
+      <tr class="table table-dark">
         <td><%= link_to list.description, edit_list_path(list) %><% list.description %></td>
         <td>
             <%= form_for(list) do |form| %>
             <%= form.text_field :description, type: 'hidden' %>
             <%= form.check_box :completed,:checked => true, :style => 'visibility: hidden' %>
-            <%= form.submit 'not done', class:'btn btn-outline-warning btn-sm' %>
+            <%= form.submit 'not done', class:'btn btn-warning btn-sm' %>
             <% end %>
             </td>
           <td>  <% link_to 'Show', list %>
                 <% link_to 'Edit', edit_list_path(list) %>
-               <center> <%= link_to 'Delete', list, class: 'btn btn-outline-danger btn-sm', method: :delete, data: { confirm: 'Are you sure?' } %></center>
+               <center> <%= link_to 'Delete', list, class: 'btn btn-light btn-sm', method: :delete, data: { confirm: 'Are you sure?' } %></center>
         </td>
       </tr>
       <%end%>
@@ -43,8 +43,8 @@
 <%# <%= link_to 'New List', new_list_path, class: 'btn btn-success' %> 
 
     
-  <%= link_to 'Delete All Done', home_delete_list_path, data: { confirm: 'Are you sure?' }%> |
-  <%= link_to 'Delete Everything', home_delete_all_path, data: { confirm: 'Are you sure?' }%>
+  <%= link_to 'Delete All Done', home_delete_list_path, class: "btn btn-outline-secondary btn-sm", data: { confirm: 'Are you sure?' }%> |
+  <%= link_to 'Delete Everything', home_delete_all_path, class: "btn btn-outline-secondary btn-sm", data: { confirm: 'Are you sure?' }%>
   
   
 
