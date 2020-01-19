@@ -1,0 +1,38 @@
+<div class="card-deck">
+  
+    <div class="card">
+    <div class="card-header">
+        <h5 class="card-title">Currency Exchange</h5>
+    </div>
+      <div class="card-body">
+        <p class="card-text">USD  <%=@output_currency.values[4]['USD']%></p>
+        <p class="card-text">AUD  <%=@output_currency.values[4]['AUD']%></p>
+        <p class="card-text">PHP  <%=@output_currency.values[4]['PHP']%></p>
+     
+      
+    </div>
+  </div>
+  
+    <div class="card">
+    <div class="card-header">
+        <h5 class="card-title">Brisbane Weather</h5>
+    </div>
+
+      <div class="card-body">
+        <p class="card-text">Minimum  <%=@output_weather['observations']['data'][0]['air_temp']%>°C</p>
+        <p class="card-text">Maximum  <%=@output_weather['observations']['data'][0]['apparent_t']%>°C</p>
+      </div>
+  </div>
+  
+    <div class="card">
+    <div class="card-header">
+        <h5 class="card-title">News</h5>
+    </div>
+      <div class="card-body">
+        <p class="card-text"><%= @output_news['articles'][0]['title']  %></p>
+        <p class="card-text"><%= @output_news['articles'][0]['description']  %></p>
+        
+        
+      </div>
+    
+</div>

@@ -6,6 +6,19 @@ class ListsController < ApplicationController
   def index
     @list = List.new
     @lists = List.all
+    @url_currency = "http://data.fixer.io/api/latest?access_key=63324536fcccf974561850866565236b&symbols=USD,AUD,PHP&format=1"
+    @uri_currency = URI(@url_currency)
+    @response_currency = Net::HTTP.get(@uri_currency)
+    @output_currency = JSON.parse(@response_currency)
+    @url_weather = "http://reg.bom.gov.au/fwo/IDQ60901/IDQ60901.94576.json"
+    @uri_weather = URI(@url_weather)
+    @response_weather = Net::HTTP.get(@uri_weather)
+    @output_weather = JSON.parse(@response_weather)
+    @url_news = "https://newsapi.org/v2/top-headlines?country=au&apiKey=a9ef7fe5fb064d9c987c2a0717370488"
+    @uri_news = URI(@url_news)
+    @response_news = Net::HTTP.get(@uri_news)
+    @output_news = JSON.parse(@response_news)
+
   end
 
   # GET /lists/1
