@@ -1,10 +1,12 @@
 class ListsController < ApplicationController
-  before_action :set_list, only: [:show, :edit, :update, :destroy]
+  before_action :set_list, only: [:show, :edit, :update, :destroy]  
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /lists
   # GET /lists.json
   def index
-    @list = List.new
+    @list.user = current_user
+    # @list = List.new
     @lists = List.all
     @url_currency = "http://data.fixer.io/api/latest?access_key=63324536fcccf974561850866565236b&symbols=USD,AUD,PHP&format=1"
     @uri_currency = URI(@url_currency)
@@ -28,7 +30,7 @@ class ListsController < ApplicationController
 
   # GET /lists/new
   def new
-    @list = List.new
+    @list = current_user.list.build
   end
 
   # GET /lists/1/edit
@@ -38,7 +40,7 @@ class ListsController < ApplicationController
   # POST /lists
   # POST /lists.json
   def create
-    @list = List.new(list_params)
+    @list = current_user.list.build(list_params)
 
     respond_to do |format|
       if @list.save
