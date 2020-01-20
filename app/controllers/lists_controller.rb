@@ -6,7 +6,7 @@ class ListsController < ApplicationController
   # GET /lists.json
   def index
     @list.user = current_user
-    # @list = List.new
+    @list = List.new
     @lists = List.all
     @url_currency = "http://data.fixer.io/api/latest?access_key=63324536fcccf974561850866565236b&symbols=USD,AUD,PHP&format=1"
     @uri_currency = URI(@url_currency)
