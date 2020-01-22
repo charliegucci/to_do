@@ -3,5 +3,6 @@ class ApplicationController < ActionController::Base
 def set_user 
  @list = List.new
  @list.user = current_user 
+
 end
 end
