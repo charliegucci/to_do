@@ -14,7 +14,7 @@
             <%= form.submit 'done', class:'btn btn-success btn-sm' %></center>
             <% end %>
             </td>
-          <td><center><%= list.user.email.split('@')[0]%></center>
+          
             <% if list.user == current_user%>
           <td class="table-light">  
               <center><%= link_to 'Delete', list, class: 'btn btn-danger btn-sm', method: :delete, data: { confirm: 'Are you sure?' } %></center>
@@ -33,7 +33,7 @@
                   <%= form.submit 'not done', class:'btn btn-warning btn-sm' %>
                   <% end %>
                   </td>
-        <td><center><%= list.user.email.split('@')[0]%><c/enter>
+        
               <% if list.user == current_user%>
               <td class="table-light">  
                <center> <%= link_to 'Delete', list, class: 'btn btn-danger btn-sm', method: :delete, data: { confirm: 'Are you sure?' } %></center>
