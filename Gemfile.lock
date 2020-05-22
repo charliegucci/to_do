@@ -133,7 +133,7 @@ GEM
     pg (0.21.0)
     popper_js (1.14.5)
     public_suffix (4.0.2)
-    puma (4.3.1)
+    puma (4.3.5)
       nio4r (~> 2.0)
     rack (2.0.8)
     rack-proxy (0.6.5)
@@ -259,7 +259,7 @@ DEPENDENCIES
   jquery-rails
   listen (>= 3.0.5, < 3.2)
   pg (~> 0.21.0)
-  puma (~> 4.1)
+  puma (~> 4.3)
   rails (~> 6.0.2, >= 6.0.2.1)
   rails_12factor (~> 0.0.3)
   sass-rails (>= 6)
